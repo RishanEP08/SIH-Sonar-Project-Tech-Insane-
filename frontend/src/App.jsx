@@ -81,7 +81,7 @@ function App() {
       formData.append("longitude", longitude);
 
       const response = await fetch(
-        "/api/predict",
+        "https://swarnadi.onrender.com/predict",
         {
           method: "POST",
           body: formData,
@@ -363,7 +363,7 @@ const handleResultResizeEnd = (e) => {
           {/* IMAGE */}
           <div className="result-image-wrapper">
             <img
-              src={`/api${scanResult.annotated_image}`}
+              src={`https://swarnadi.onrender.com${scanResult.annotated_image}`}
               alt="Annotated sonar scan"
               className="result-image"
             />
