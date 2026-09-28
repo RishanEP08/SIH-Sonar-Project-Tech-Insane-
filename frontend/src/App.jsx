@@ -81,7 +81,7 @@ function App() {
       formData.append("longitude", longitude);
 
       const response = await fetch(
-        "http://127.0.0.1:8000/predict",
+        "/api/predict",
         {
           method: "POST",
           body: formData,
@@ -363,7 +363,7 @@ const handleResultResizeEnd = (e) => {
           {/* IMAGE */}
           <div className="result-image-wrapper">
             <img
-              src={`http://127.0.0.1:8000${scanResult.annotated_image}`}
+              src={`/api${scanResult.annotated_image}`}
               alt="Annotated sonar scan"
               className="result-image"
             />
