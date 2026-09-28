@@ -74,7 +74,8 @@ def root():
 # ==========================================
 
 @app.post("/predict")
-async def predict(file: UploadFile = File(...)):
+async def predict(file: UploadFile = File(...),latitude: float | None = None,
+    longitude: float | None = None):
 
     # Generate a unique ID for this prediction
     file_id = uuid.uuid4().hex
@@ -140,7 +141,11 @@ async def predict(file: UploadFile = File(...)):
     return {
         "success": True,
         "detections": detections,
-        "annotated_image": f"/result/{file_id}"
+        "annotated_image": f"/result/{file_id}",
+        "location": {
+              "latitude": latitude,
+              "longitude": longitude
+         }
     }
 
 
