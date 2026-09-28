@@ -7,7 +7,7 @@ from pathlib import Path
 # Configuration
 # =========================
 
-MODEL_PATH = "models/best.pt"
+MODEL_PATH = "backend/models/best.pt"
 CONFIDENCE = 0.25
 IMAGE_SIZE = 640
 
