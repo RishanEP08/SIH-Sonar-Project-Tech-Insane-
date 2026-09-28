@@ -6,6 +6,7 @@ env/
 
 runs/
 results/
+uploads/
 *.log
 
 .DS_Store
