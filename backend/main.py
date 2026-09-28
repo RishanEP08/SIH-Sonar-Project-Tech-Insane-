@@ -2,7 +2,7 @@ from pathlib import Path
 import shutil
 import uuid
 
-from fastapi import FastAPI, File, UploadFile
+from fastapi import FastAPI, File, UploadFile, Form
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from ultralytics import YOLO
@@ -74,8 +74,9 @@ def root():
 # ==========================================
 
 @app.post("/predict")
-async def predict(file: UploadFile = File(...),latitude: float | None = None,
-    longitude: float | None = None):
+async def predict(file: UploadFile = File(...),
+                  latitude: float | None = Form(None),
+                  longitude: float | None = Form(None)):
 
     # Generate a unique ID for this prediction
     file_id = uuid.uuid4().hex
