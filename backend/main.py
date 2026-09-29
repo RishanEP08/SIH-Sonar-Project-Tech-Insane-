@@ -16,7 +16,7 @@ from ultralytics import YOLO
 # C:\Sonar\SIH-Sonar-Project-Tech-Insane-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-MODEL_PATH = BASE_DIR / "backend" / "models" / "best.onnx"
+MODEL_PATH = BASE_DIR / "backend" / "models" / "best.pt"
 
 UPLOAD_DIR = BASE_DIR / "backend" / "uploads"
 RESULT_DIR = BASE_DIR / "backend" / "results"
@@ -48,8 +48,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
-        "http://127.0.0.1:5173",
-        "https://swarnadi-1lh1ncct4-tech-support5.vercel.app"    
+        "http://127.0.0.1:5173"  
     ],
     allow_credentials=True,
     allow_methods=["*"],
